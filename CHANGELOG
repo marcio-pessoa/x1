@@ -1,0 +1,26 @@
+CHANGELOG, x1 Mark I - Useless Machine, Change log file
+
+2017-06-16
+        * New feature: Added battery charging via Arduino Leonardo micro USB
+          connector.
+
+2017-04-30
+        * Improvement: More documentation.
+
+2017-04-13
+        * Bug fix: Solved inappropriate standby issue.
+
+2016-03-11
+        * New feature: Added beep and boop sounds.
+
+2015-10-10
+        * Improvement: Ajust mechanical limits to make device more responsive.
+
+2015-08-15
+        * Strategic: Project renamed from "Useless Machine" to "x1".
+
+2015-03-01
+        * Working version.
+
+2015-02-24
+        * Scratch version.
