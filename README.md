@@ -1,38 +1,37 @@
-README - useless - Useless Machine - Readme file
+# README.md - useless - Useless Machine - Readme file
 
-1. Introduction
-
-
-2. Mechanics
+## Introduction
 
 
-3. Electronics
+## Mechanics
 
-Arduino Uno pin designation table
-╔════╦═════╦═══════════╦═══════════╦══════════════════════════════════════════╗
-║ id ║ pin ║   type    ║ direction ║               description                ║
-╠════╬═════╬═══════════╬═══════════╬══════════════════════════════════════════╣
-║  0 ║   0 ║ digital   ║ input     ║ Serial communication                     ║
-║  1 ║   1 ║ digital   ║ output    ║ Serial communication                     ║
-║  2 ║   0 ║ digital   ║ input     ║ Power switch                             ║
-║  3 ║   3 ║ digital   ║ output    ║ Relay                                    ║
-║  4 ║   4 ║ -         ║ -         ║ -                                        ║
-║  5 ║   5 ║ PWM       ║ output    ║ Speaker                                  ║
-║  6 ║   6 ║ PWM       ║ output    ║ Angry LED                                ║
-║  7 ║   7 ║ -         ║ -         ║ -                                        ║
-║  8 ║   8 ║ -         ║ -         ║ -                                        ║
-║  9 ║   9 ║ PWM       ║ output    ║ Servo motor                              ║
-║ 10 ║  10 ║ -         ║ -         ║ -                                        ║
-║ 11 ║  11 ║ -         ║ -         ║ -                                        ║
-║ 12 ║  12 ║ -         ║ -         ║ -                                        ║
-║ 13 ║  13 ║ digital   ║ output    ║ Status LED                               ║
-║ 14 ║   0 ║ -         ║ -         ║ -                                        ║
-║ 15 ║   1 ║ -         ║ -         ║ -                                        ║
-║ 16 ║   2 ║ -         ║ -         ║ -                                        ║
-║ 17 ║   3 ║ -         ║ -         ║ -                                        ║
-║ 18 ║   4 ║ -         ║ -         ║ -                                        ║
-║ 19 ║   5 ║ analog    ║ input     ║ Random number generator Seed input       ║
-╚════╩═════╩═══════════╩═══════════╩══════════════════════════════════════════╝
+
+## Electronics
+
+### Pin designation table
+ id | pin |   type    | direction |               description                
+----|-----|-----------|-----------|------------------------------------------
+  0 |   0 | digital   | input     | Serial communication                     
+  1 |   1 | digital   | output    | Serial communication                     
+  2 |   0 | digital   | input     | Power switch                             
+  3 |   3 | digital   | output    | Relay                                    
+  4 |   4 | -         | -         | -                                        
+  5 |   5 | PWM       | output    | Speaker                                  
+  6 |   6 | PWM       | output    | Angry LED                                
+  7 |   7 | -         | -         | -                                        
+  8 |   8 | -         | -         | -                                        
+  9 |   9 | PWM       | output    | Servo motor                              
+ 10 |  10 | -         | -         | -                                        
+ 11 |  11 | -         | -         | -                                        
+ 12 |  12 | -         | -         | -                                        
+ 13 |  13 | digital   | output    | Status LED                               
+ 14 |   0 | -         | -         | -                                        
+ 15 |   1 | -         | -         | -                                        
+ 16 |   2 | -         | -         | -                                        
+ 17 |   3 | -         | -         | -                                        
+ 18 |   4 | -         | -         | -                                        
+ 19 |   5 | analog    | input     | Random number generator Seed input       
+
 
 
                                       +-----+
