@@ -34,6 +34,6 @@ void StandbyHandler() {
   if (standby.check() and 
       relay.status() and 
       finger.positionRead() == position_park) {
-    CommandM82();
+    CommandM82();  // Power off
   }
 }

@@ -1,5 +1,9 @@
 # CHANGELOG.md, x1 Mark I - Useless Machine, Change log file
 
+## 2017-12-24
+### Added
+- Speed increment during play.
+
 ## 2017-06-16
 ### Added
 - Battery charging via Arduino Leonardo micro USB connector.

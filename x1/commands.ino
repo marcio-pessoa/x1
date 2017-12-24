@@ -20,7 +20,7 @@
 int CommandM100(char letter = 0) {
   if (letter == 'G' or letter == 0) {
     echoln(F("G0\tMove axis"));
-    echoln(F("G03\tDelay between moves"));
+    echoln(F("G03\tFinger delay"));
     echoln(F("G28\tFinger home"));
     echoln(F("G29\tFinger out-of-door"));
     echoln(F("G90\tAbsolute programming"));
@@ -30,14 +30,14 @@ int CommandM100(char letter = 0) {
     echoln(F("M0\tStop"));  }
     echoln(F("M15\tSystem info"));
     echoln(F("M17\tAttach motor"));
-    echoln(F("M18\tDetach motor; same as M84"));
+    echoln(F("M18\tDetach motor"));
     echoln(F("M80\tPower status"));
     echoln(F("M81\tPower on"));
     echoln(F("M82\tPower off"));
     echoln(F("M86\tAxis information"));
     echoln(F("M89\tMemory information"));
     echoln(F("M90\tLever status"));
-    echoln(F("M92\tVersion information"));
+    echoln(F("M92\tSystem information"));
     echoln(F("M99\tReset system"));
     echoln(F("M100\tThis help message"));
     echoln(F("M111\tDebug mode"));
@@ -280,18 +280,18 @@ bool CommandM81() {
   return !relay.status();
 }
 
-/* 
+/* CommandM82
  * 
  * Description
- *   .
+ *   Power off.
  * 
- *   ()
+ *   CommandM82()
  * 
  * Parameters
  *   none
  * 
  * Returns
- *   void
+ *   bool
  */
 bool CommandM82() {
   if (finger.positionRead() == position_park) {
@@ -319,6 +319,7 @@ bool CommandM82() {
  */
 int CommandM90() {
   echoln("Lever: " + String(lever.check() ? "On" : "Off"));
+  echoln("    Speed: " + String(servo_speed * 100) + " cm/s");
 }
 
 /* 
@@ -345,7 +346,7 @@ int CommandM15() {
 /* 
  * 
  * Description
- *   .
+ *   Finger delay.
  * 
  *   ()
  * 

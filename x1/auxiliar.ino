@@ -11,15 +11,16 @@ void TurnSwitchOff() {
   // Set delay before finger action and reset timer
   action.set(random(ceil(action_timer) + 100));
   action.reset();
-  // Set finger delay (or speed)
-  finger.delayWrite(ceil(random(servo_delay) + servo_offset_delay));
+  servo_speed = 1 / (ceil(random(servo_delay) / lever_counter +
+                     servo_offset_delay));
+  CommandG3(1 / servo_speed);  // Finger delay
   standby.reset();  // Reset standby timer
   // Turn on relay
   if (relay.status() == LOW) {
     CommandM81();  // Power on
   }
   CommandG90();  // Absolute programming
-  finger.positionWrite(position_switch_off);
+  CommandG29();  // Finger switch off
   if (debug) {
     CommandM90();  // Lever status
   }
@@ -28,8 +29,8 @@ void TurnSwitchOff() {
 void ParkFinger() {
   tone(speaker_pin, 1217, 80);
   digitalWrite(led_angry_pin, LOW);
-  finger.positionWrite(position_park);
-  finger.delayWrite(ceil(random(servo_delay) + servo_offset_delay));
+  CommandG28();  // Finger home
+  // CommandG3(ceil(random(servo_delay) + servo_offset_delay));  // Finger delay
   if (debug) {
     CommandM90();  // Lever status
   }

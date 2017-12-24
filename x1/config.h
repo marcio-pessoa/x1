@@ -21,9 +21,9 @@ const byte relay_pin = 3;
 const byte servo_pin = 9;
 const byte position_park = 170;  // degree angle
 const byte position_switch_off = 111;  // degree angle
-const byte servo_delay = 20;  // milliseconds - maximum servo delay to be
-                              // randomized
+const byte servo_delay = 40;  // milliseconds - maximum servo delay
 const byte servo_offset_delay = 6;  // milliseconds - servo speed offset
+float servo_speed = 0;
 
 // Random number generator Seed
 const byte random_Seed_pin = 5;
