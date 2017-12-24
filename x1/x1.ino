@@ -26,8 +26,8 @@
 Project x1("x1",  // Platform
            "I",  // Mark
            "Useless Machine",  // Name
-           "0.09b",  // Version
-           "2017-06-136",  // Version date
+           "0.1b",  // Version
+           "2017-12-24",  // Version date
            "4",  // Serial number
            "Copyright (c) 2015-2017 Marcio Pessoa",  // Owner
            "undefined. There is NO WARRANTY.",  // License
