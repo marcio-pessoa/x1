@@ -255,6 +255,7 @@ int CommandM18() {
  */
 int CommandM80() {
   echoln("Power: " + String(relay.status() ? "On" : "Off"));
+  return false;
 }
 
 /* 
