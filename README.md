@@ -10,7 +10,7 @@
 
 ### Pin designation table
  id | pin |   type    | direction |               description                
-----|-----|-----------|-----------|------------------------------------------
+----|-----|-----------|-----------|--------------------------------------------
   0 |   0 | digital   | input     | Serial communication                     
   1 |   1 | digital   | output    | Serial communication                     
   2 |   0 | digital   | input     | Power switch                             
