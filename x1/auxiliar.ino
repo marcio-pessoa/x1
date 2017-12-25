@@ -9,7 +9,7 @@ void TurnSwitchOff() {
   digitalWrite(led_angry_pin, HIGH);
   lever_counter++;
   // Set delay before finger action and reset timer
-  action.set(random(ceil(action_timer) + 100));
+  action.set(random(ceil(action_timer) + 100) / ceil(lever_counter / 2));
   action.reset();
   servo_speed = 1 / (ceil(random(servo_delay) / lever_counter +
                      servo_offset_delay));
