@@ -296,6 +296,8 @@ bool CommandM81() {
 bool CommandM82() {
   if (finger.positionRead() == position_park) {
     CommandM0();  // Stop
+    lever_counter = 0;
+    servo_speed = 0;
     relay.off();
     if (debug) {
       CommandM80();  // Power status
