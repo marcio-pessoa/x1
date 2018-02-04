@@ -1,4 +1,5 @@
-# CHANGELOG.md, x1 Mark I - Useless Machine, Change log file
+# CHANGELOG
+x1 Mark I - Useless Machine, Change log
 
 ## 2017-12-24
 ### Added

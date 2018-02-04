@@ -1,10 +1,10 @@
-# README.md - useless - Useless Machine - Readme file
+# x1 Mark I - Useless Machine
 
-## Introduction
+[Change log](CHANGELOG.md)
 
+[Bill of materials](BOM.md)
 
-## Mechanics
-
+[Kanban](KANBAN.md)
 
 ## Electronics
 
@@ -63,6 +63,7 @@
                           Adapted from: http://busyducks.com/ascii-art-arduinos
 
 Prototype shield v.5
+
                                       +-----+
          +----[PWR]-------------------| USB |--+
          |                            +-----+  |
@@ -89,3 +90,4 @@ Prototype shield v.5
          |            [ ] [ ] [ ]              |
          |  UNO_R3    GND MOSI 5V  ____________/
           \_______________________/
+

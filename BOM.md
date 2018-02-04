@@ -1,28 +1,14 @@
-BOM, x1 Mark I - Useless Machine, Bill of materials
+# BOM
+x1 Mark I - Useless Machine, Bill of materials
 
-Label:
-  Status '-': OK
-  Status '+': Pending
+| Quant | Description        | ID             | Bought     | Delivered  | Unit | Charge | Taxes |   Cost |
+|-------|--------------------|----------------|------------|------------|------|--------|-------|--------|
+|     1 | Case               |   401182978289 | 2016-09-09 | 2016-mm-dd | each |   3.99 |  0.24 |   4.23 |
 
-Part list:
+
 - Aluminum PCB Box Instrument Box Enclosure Electronic Project Case 150*105*55mm
-  - Technical specification
-    - URL: http://rover.ebay.com/rover/0/e11400.m1842.l5919/7?euid=40b752bd4fb641dd9b0ba775fd47154d&bu=44114865119&loc=http%3A%2F%2Fwww.ebay.com%2Fulk%2Fvod%3Ftransid%3D0%26itemid%3D401182978289%26qu%3D1&sojTags=bu=bu
-  - Buy
-    - Date: Fri, Sep 9, 2016 at 8:59 AM
-    - Cost: USD 3.99
-    - eBay item ID: 401182978289
-    - Delivery: 2016-10-24
-  - Install
-- Blanc PCB
-  + Technical specification
-    + URL: 
-  + Buy
-    + Date: 
-    + Cost: USD 0.0
-    + eBay item ID: 
-    + Delivery: 
-  - Install
+
+
 - Battery 18650 3200mAh 3.7V Rechargeable Li-ion
   - Technical specification
     - URL: http://rover.ebay.com/rover/0/e11400.m1842.l5919/7?euid=43d7ab60aad14b7c90d278d5e9c320d4&loc=http%3A%2F%2Fpayments.ebay.com%2Fws%2FeBayISAPI.dll%3FViewPaymentStatus%26transId%3D1601319039016%26itemId%3D261530668000%26qu%3D1%26ssPageName%3DADME%3AL%3AOC%3AUS%3A5919
