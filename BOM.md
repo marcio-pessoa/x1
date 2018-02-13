@@ -4,6 +4,7 @@ x1 Mark I - Useless Machine, Bill of materials
 | Quant | Description        | ID             | Bought     | Delivered  | Unit | Charge | Taxes |   Cost |
 |-------|--------------------|----------------|------------|------------|------|--------|-------|--------|
 |     1 | Case               |   401182978289 | 2016-09-09 | 2016-mm-dd | each |   3.99 |  0.24 |   4.23 |
+|     1 | Battery            |   261530668000 | 2015-05-05 | 2015-mm-dd | each |   1.11 |  0.06 |   1.17 |
 
 
 - Aluminum PCB Box Instrument Box Enclosure Electronic Project Case 150*105*55mm
