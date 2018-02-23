@@ -6,7 +6,11 @@
 
 [Kanban](KANBAN.md)
 
-## Electronics
+# Electronics
+
+## Arduino
+Technical specifications:
+- Model: [Arduino Leonardo]
 
 ### Pin designation table
  id | pin |   type    | direction |               description                
@@ -32,62 +36,67 @@
  18 |   4 | -         | -         | -                                        
  19 |   5 | analog    | input     | Random number generator Seed input       
 
+### Diagram
+                                 +-----+
+    +----[PWR]-------------------| USB |--+
+    |                            +-----+  |
+    |                                     |
+    |                           A5/SCL[ ] |   C5 
+    |                           A4/SDA[ ] |   C4 
+    |                             AREF[ ] |
+    |                              GND[ ] |
+    | [ ]N/C                    SCK/13[x]~|   B5
+    | [ ]v.ref                 MISO/12[ ] |   .
+    | [ ]RST                   MOSI/11[ ]~|   .
+    | [ ]3V3   +-----+              10[ ]~|   .
+    | [ ]5v    |     |               9[x]~|   .
+    | [ ]GND   | MCU |               8[ ] |   B0
+    | [ ]GND   |     |                    |
+    | [x]Vin   +-----+               7[ ] |   D7
+    |                                6[x]~|   .
+    | [ ]A0                          5[ ]~|   .
+    | [ ]A1                          4[ ] |   .
+    | [ ]A2                     INT1/3[x]~|   .
+    | [ ]A3                     INT0/2[x] |   .
+    | [ ]A4/SDA  RST SCK MISO     TX>1[x] |   .
+    | [x]A5/SCL  [ ] [ ] [ ]      RX<0[x] |   D0
+    |            [ ] [ ] [ ]              |
+    |  Leonardo  GND MOSI 5V  ____________/
+    \_______________________/
 
+Adapted from: http://busyducks.com/ascii-art-arduinos
 
-                                      +-----+
-         +----[PWR]-------------------| USB |--+
-         |                            +-----+  |
-         |                                     |
-         |                           A5/SCL[ ] |   C5 
-         |                           A4/SDA[ ] |   C4 
-         |                             AREF[ ] |
-         |                              GND[ ] |
-         | [ ]N/C                    SCK/13[x]~|   B5
-         | [ ]v.ref                 MISO/12[ ] |   .
-         | [ ]RST                   MOSI/11[ ]~|   .
-         | [ ]3V3   +-----+              10[ ]~|   .
-         | [ ]5v    |     |               9[x]~|   .
-         | [ ]GND   | MCU |               8[ ] |   B0
-         | [ ]GND   |     |                    |
-         | [x]Vin   +-----+               7[ ] |   D7
-         |                                6[x]~|   .
-         | [ ]A0                          5[ ]~|   .
-         | [ ]A1                          4[ ] |   .
-         | [ ]A2                     INT1/3[x]~|   .
-         | [ ]A3                     INT0/2[x] |   .
-         | [ ]A4/SDA  RST SCK MISO     TX>1[x] |   .
-         | [x]A5/SCL  [ ] [ ] [ ]      RX<0[x] |   D0
-         |            [ ] [ ] [ ]              |
-         |  Leonardo  GND MOSI 5V  ____________/
-          \_______________________/
-                          Adapted from: http://busyducks.com/ascii-art-arduinos
+## Prototype shield
+Technical specifications:
+- Version: 5
 
-Prototype shield v.5
+### Diagram
 
-                                      +-----+
-         +----[PWR]-------------------| USB |--+
-         |                            +-----+  |
-         |         GND/RST2  [ ][ ]            |
-         |       MOSI2/SCK2  [ ][ ]  A5/SCL[ ] |   C5 
-         |          5V/MISO2 [ ][ ]  A4/SDA[ ] |   C4 
-         |                             AREF[ ] |
-         |                              GND[ ] |
-         | [ ]N/C                    SCK/13[x] |   B5
-         | [ ]v.ref                 MISO/12[ ] |   .
-         | [ ]RST                   MOSI/11[ ]~|   .
-         | [ ]3V3                        10[ ]~|   .
-         | [ ]5v                          9[x]~|   .
-         | [ ]GND                         8[ ] |   B0
-         | [ ]GND                              |
-         | [ ]Vin                         7[ ] |   D7
-         |                                6[ ]~|   .
-         | [ ]A0                          5[ ]~|   .
-         | [ ]A1                          4[ ] |   .
-         | [ ]A2                     INT1/3[x]~|   .
-         | [ ]A3                     INT0/2[x] |   .
-         | [ ]A4/SDA  RST SCK MISO     TX>1[x] |   .
-         | [x]A5/SCL  [ ] [ ] [ ]      RX<0[x] |   D0
-         |            [ ] [ ] [ ]              |
-         |  UNO_R3    GND MOSI 5V  ____________/
-          \_______________________/
+    +----[PWR]----------------------------+
+    |                                     |
+    |         GND/RST2  [ ][ ]            |
+    |       MOSI2/SCK2  [ ][ ]  A5/SCL[ ] |   C5 
+    |          5V/MISO2 [ ][ ]  A4/SDA[ ] |   C4 
+    |                             AREF[ ] |
+    |                              GND[ ] |
+    | [ ]N/C                    SCK/13[x] |   B5
+    | [ ]v.ref                 MISO/12[ ] |   .
+    | [ ]RST                   MOSI/11[ ]~|   .
+    | [ ]3V3                        10[ ]~|   .
+    | [ ]5v                          9[x]~|   .
+    | [ ]GND                         8[ ] |   B0
+    | [ ]GND                              |
+    | [ ]Vin                         7[ ] |   D7
+    |                                6[ ]~|   .
+    | [ ]A0                          5[ ]~|   .
+    | [ ]A1                          4[ ] |   .
+    | [ ]A2                     INT1/3[x]~|   .
+    | [ ]A3                     INT0/2[x] |   .
+    | [ ]A4/SDA  RST SCK MISO     TX>1[x] |   .
+    | [x]A5/SCL  [ ] [ ] [ ]      RX<0[x] |   D0
+    |            [ ] [ ] [ ]              |
+    |            GND MOSI 5V  ____________/
+    \_______________________/
 
+---
+[Arduino Leonardo]: https://www.arduino.cc/en/Main/arduinoBoardLeonardo/#techspecs
