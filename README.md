@@ -62,7 +62,7 @@ Technical specifications:
     | [x]A5/SCL  [ ] [ ] [ ]      RX<0[x] |   D0
     |            [ ] [ ] [ ]              |
     |  Leonardo  GND MOSI 5V  ____________/
-    \_______________________/
+     \_______________________/
 
 Adapted from: http://busyducks.com/ascii-art-arduinos
 
@@ -96,7 +96,7 @@ Technical specifications:
     | [x]A5/SCL  [ ] [ ] [ ]      RX<0[x] |   D0
     |            [ ] [ ] [ ]              |
     |            GND MOSI 5V  ____________/
-    \_______________________/
+     \_______________________/
 
 ---
 [Arduino Leonardo]: https://www.arduino.cc/en/Main/arduinoBoardLeonardo/#techspecs
