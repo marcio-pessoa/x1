@@ -1,0 +1,189 @@
+- 'BACKLOG':
++ Mechanics
++ Electronics
++ Software
+  * Firmware (Arduino)
+    * Commands
+      * G2
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * G3
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * G28
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * G29
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * G90
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * G91
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M15
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M17
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M18
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M84
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M86
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M89
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M90
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M92
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M99
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M100
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M111
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+    * Angry mode: Quando segurar o botão ele deve entrar em modo furioso.
+      Um led vermelho deve acender e um buzzer deve emitir sons semelhantes
+      ao robô R2-D2 furioso.
+      * Aprender a tocar música
+      * Conseguir notas musicais dos sons do R2-D2
+      * Criar sequences das melodias do R2-D2
+      * Integrar com firmware x1.
+
+TODO
++ Mechanics
++ Electronics
+  * Ajustar resistência do LED vermelho para acender com maior intensidade.
++ Software
+      * G0
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M80
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+        * Bug: Por alguma razão não consigo ativar o relé pelo console.
+      * M81
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+      * M82
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+
+IN PROGRESS
++ Mechanics
++ Electronics
++ Software
+  * Firmware (Arduino)
+    * Commands
+      * 0
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+
+TESTING
++ Mechanics
+  * Case
+    * Tampa traseira
+      * Cut Arduino Leonardo USB interface
+    * Dobradiça
+      * Fixar
+        * Parafuso de aço, Phillips, cabeça cone, M3, 1 cm
+    * Tampa móvel
+      * Furos da dobradiça
+    * Tampa traseira
+      * Furos da dobradiça
++ Electronics
+  * Migrate electronics to Arduino Leonardo
+    * Unified USB interface and battery charger connector
+  * Melhorar acabamento dos conectores
+    > 2017-02-24 - Pesquisar por dupont connector
++ Software
+  * Firmware (Arduino)
+    * Port code to Arduino Leonardo
+    * Commands
+      * M0
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+
+DONE
++ Mechanics
+  * Brass standoff
+  * Case
+    * Fixar pézinhos de borracha
+    * Cortar tampa
+    * Furar orificio para switch
+    * Fixar Switch
+    * Tampa traseira
+      * Cortar orifício para USB
+      * Furar Orifício para micro USB (carregador)
+  * Finger
+    * Craft
+    * Fixar no suporte de servo
+    * Mount
+      * Arduino Uno
+      * Servo motor
+      * Battery
+      * Relay
+      * Charger
++ Electronics
+  * Battery (Li-ion polymer Battery 3.7V 2100 mAh 425585)
+  * Arduino Uno
+  * Servo motor
+  * Relay
+  * Charger
+  * Adicionar LED vemelho de alta intensidade
+  * Adicionar buzzer
++ Software
+  * Firmware (Arduino)
+
+WON'T DO
++ Mechanics
++ Electronics
++ Software
+  * Firmware (Arduino)
+    * Commands
+      * M124
+        * Revisar nomenclatura
+        * Revisar função
+        * Revisar implementação
+        > 2017-03-22 - Deprecated.
+      * G1
+        > 2017-03-02 - Acredito que o comando G0 e G1 podem ser unificados
+          neste projeto, pois há apenas um eixo, sem necessidade de precisão
+          e sem necessidade de realizar calculo de hipotenusa.
+        > 2017-03-24 - Esse comando não se aplica ao escopo do dispositivo.
