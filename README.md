@@ -6,11 +6,16 @@
 
 [Kanban](KANBAN.md)
 
+# Mechanics
+
+## Case
+- Aluminum PCB Box Instrument Box Enclosure Electronic Project Case 150*105*55mm
+
 # Electronics
 
 ## Arduino
 Technical specifications:
-- Model: [Arduino Leonardo]
+- Model: [Arduino Leonardo] R3
 
 ### Pin designation table
  id | pin |   type    | direction |               description                
@@ -97,6 +102,14 @@ Technical specifications:
     |            [ ] [ ] [ ]              |
     |            GND MOSI 5V  ____________/
      \_______________________/
+
+
+## Battery
+Technical specifications:
+- Technology: Rechargeable Li-ion
+- Voltage: 3.7V
+- Capacity: 3200 mAh
+- Model: 18650
 
 ---
 [Arduino Leonardo]: https://www.arduino.cc/en/Main/arduinoBoardLeonardo/#techspecs

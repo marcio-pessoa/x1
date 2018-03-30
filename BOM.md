@@ -4,21 +4,11 @@ x1 Mark I - Useless Machine, Bill of materials
 | Quant | Description        | ID             | Bought     | Delivered  | Unit | Charge | Taxes |   Cost |
 |-------|--------------------|----------------|------------|------------|------|--------|-------|--------|
 |     1 | Case               |   401182978289 | 2016-09-09 | 2016-mm-dd | each |   3.99 |  0.24 |   4.23 |
-|     1 | Battery            |   261530668000 | 2015-05-05 | 2015-mm-dd | each |   1.11 |  0.06 |   1.17 |
+|     1 | Battery_18650      |   261530668000 | 2015-04-01 | 2015-mm-dd | each |   3.39 |       |        |
 
 
-- Aluminum PCB Box Instrument Box Enclosure Electronic Project Case 150*105*55mm
 
 
-- Battery 18650 3200mAh 3.7V Rechargeable Li-ion
-  - Technical specification
-    - URL: http://rover.ebay.com/rover/0/e11400.m1842.l5919/7?euid=43d7ab60aad14b7c90d278d5e9c320d4&loc=http%3A%2F%2Fpayments.ebay.com%2Fws%2FeBayISAPI.dll%3FViewPaymentStatus%26transId%3D1601319039016%26itemId%3D261530668000%26qu%3D1%26ssPageName%3DADME%3AL%3AOC%3AUS%3A5919
-  - Buy
-    - Date: Wed, Apr 1, 2015 at 11:32 PM
-    - Cost: USD 3.39
-    - eBay item ID: 261530668000
-    - Delivery: 2015-mm-dd
-  - Install
 - Battery charger
   - Technical specification
     - URL: http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&item=400880822474
