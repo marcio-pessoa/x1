@@ -1,7 +1,7 @@
 # KANBAN
-x1 Mark I - Useless Machiner
+x1 Mark I - Useless Machine
 
-|**BACKLOG**                                                     |**TODO**                                                          |**DOING**                            |**TESTING**                                   |**DONE**                              |
+|**BACKLOG**                                                     |**TO DO**                                                         |**DOING**                            |**TESTING**                                   |**DONE**                              |
 |:---------------------------------------------------------------|:-----------------------------------------------------------------|:------------------------------------|:---------------------------------------------|:-------------------------------------|
 |(Software) Command G2 - Check name                              |(Electronics) Red LED - Ajust resistor to light on with more power|(Software) Command 0 - Check name    |(Software) All code - Port to Arduino Leonardo|(Electronics) Red LED - Install       |
 |(Software) Command G2 - Check function                          |(Software) Command G0 - Check name                                |(Software) Command 0 - Check function|                                              |(Electronics) Buzzer - Install        |
