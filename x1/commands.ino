@@ -28,7 +28,7 @@ int CommandM100(char letter = 0) {
   }
   if (letter == 'M' or letter == 0) {
     echoln(F("M0\tStop"));  }
-    echoln(F("M15\tSystem info"));
+    echoln(F("M15\tSystem information"));
     echoln(F("M17\tAttach motor"));
     echoln(F("M18\tDetach motor"));
     echoln(F("M80\tPower status"));
@@ -37,7 +37,7 @@ int CommandM100(char letter = 0) {
     echoln(F("M86\tAxis information"));
     echoln(F("M89\tMemory information"));
     echoln(F("M90\tLever status"));
-    echoln(F("M92\tSystem information"));
+    echoln(F("M92\tSystem version"));
     echoln(F("M99\tReset system"));
     echoln(F("M100\tThis help message"));
     echoln(F("M111\tDebug mode"));
@@ -129,14 +129,14 @@ int CommandM17() {
  *   void
  */
 int CommandG29() {
-  if (relay.status()) {
-    standby.reset();
-    finger.positionWrite(position_switch_off);
-    return false;
-  }
-  else {
+  if (!relay.status()) {
+    done = true;
+    status(true);
     return true;
   }
+  standby.reset();
+  done = false;
+  finger.positionWrite(position_switch_off);
 }
 
 /* 
@@ -153,14 +153,14 @@ int CommandG29() {
  *   void
  */
 int CommandG28() {
-  if (relay.status()) {
-    standby.reset();
-    finger.positionWrite(position_park);
-    return false;
-  }
-  else {
+  if (!relay.status()) {
+    done = true;
+    status(true);
     return true;
   }
+  standby.reset();
+  done = false;
+  finger.positionWrite(position_park);
 }
 
 /* 
@@ -178,14 +178,14 @@ int CommandG28() {
  *   true: Power off
  */
 int CommandG0(int x) {
-  if (relay.status()) {
-    standby.reset();
-    finger.positionWrite(x);
-    return false;
-  }
-  else {
+  if (!relay.status()) {
+    done = true;
+    status(true);
     return true;
   }
+  standby.reset();
+  done = false;
+  finger.positionWrite(x);
 }
 
 /* 

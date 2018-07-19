@@ -1,6 +1,10 @@
 # CHANGELOG
 x1 Mark I - Useless Machine, Change log
 
+## 2018-07-18
+### Added
+- Real time return status output.
+
 ## 2017-12-24
 ### Added
 - Speed increment during play.

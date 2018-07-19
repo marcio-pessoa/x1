@@ -28,6 +28,10 @@ void FingerHandler() {
   if (relay.status()) {
     servo.write(finger.positionRead());
   }
+  if(finger.isDone() and done == false) {
+    done = true;
+    status(false);
+  }
 }
 
 void StandbyHandler() {

@@ -52,6 +52,7 @@ float GCodeNumber(char code, float val) {
 
 void GCodeParse() {
   bool retval = false;
+  bool skip_status = false;
   char letter = buffer[0];
   byte number = GCodeNumber(letter, -1);
   switch (letter) {
@@ -60,15 +61,18 @@ void GCodeParse() {
         case 0:
         case 1:
           retval = CommandG0(GCodeNumber('X', 0));
+          skip_status = true;
           break;
         case 3:
           retval = CommandG3(GCodeNumber('X', 0));
           break;
         case 28:
           retval = CommandG28();
+          skip_status = true;
           break;
         case 29:
           retval = CommandG29();
+          skip_status = true;
           break;
         case 90:
           retval = CommandG90();
@@ -137,7 +141,7 @@ void GCodeParse() {
       }
       break;
   }
-  if (buffer_pointer > 2) {
+  if (buffer_pointer > 2 and skip_status == false) {
     status(retval);
   }
 }
