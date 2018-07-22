@@ -431,7 +431,7 @@ int CommandM99() {
  */
 int CommandM92() {
   echoln(x1.version());
-  if (debug or (millis() < 100)) {
+  if (debug or (millis() < 1000)) {
     echoln(x1.owner());
     echoln(x1.compiled());
     echoln(x1.license());

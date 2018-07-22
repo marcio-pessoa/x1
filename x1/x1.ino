@@ -29,7 +29,7 @@ Project x1("x1",  // Platform
            "0.2b",  // Version
            "2018-07-18",  // Version date
            "4",  // Serial number
-           "Copyright (c) 2015-2017 Marcio Pessoa",  // Owner
+           "Copyright (c) 2015-2018 Marcio Pessoa",  // Owner
            "undefined. There is NO WARRANTY.",  // License
            "http://pessoa.eti.br/",  // Website
            "Marcio Pessoa <marcio@pessoa.eti.br>");  // Contact
