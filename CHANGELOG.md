@@ -1,6 +1,11 @@
 # CHANGELOG
 x1 Mark I - Useless Machine, Change log
 
+## 2018-07-27
+### Fixed
+- G28 not working after G91.
+- G29 not working after G91.
+
 ## 2018-07-18
 ### Added
 - Real time return status output.

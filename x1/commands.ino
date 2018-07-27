@@ -134,8 +134,9 @@ int CommandG29() {
     status(true);
     return true;
   }
-  standby.reset();
   done = false;
+  standby.reset();
+  CommandG90();  // Absolute programming
   finger.positionWrite(position_switch_off);
 }
 
@@ -158,8 +159,9 @@ int CommandG28() {
     status(true);
     return true;
   }
-  standby.reset();
   done = false;
+  standby.reset();
+  CommandG90();  // Absolute programming
   finger.positionWrite(position_park);
 }
 
