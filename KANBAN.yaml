@@ -58,7 +58,9 @@
   - (Software) Calm mode - Learn how to play music
 
 - 'TO DO':
-  - (Electronics) Red LED - Ajust resistor to light on with more power
+  - (Software) Command 0 - Check name
+  - (Software) Command 0 - Check function
+  - (Software) Command 0 - Check code
   - (Software) Command G0 - Check name
   - (Software) Command G0 - Check function
   - (Software) Command G0 - Check code
@@ -73,9 +75,7 @@
   - (Software) Command M82 - Check code
 
 - 'DOING':
-  - (Software) Command 0 - Check name
-  - (Software) Command 0 - Check function
-  - (Software) Command 0 - Check code
+  - (Electronics) Red LED - Ajust resistor to light on with more power
 
 - 'TESTING':
   - (Software) All code - Port to Arduino Leonardo
