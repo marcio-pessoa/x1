@@ -1,6 +1,6 @@
 /* handlers.ino, x1 Mark I - Useless Machine, Arduino handlers sketch file
  * 
- * Author: Márcio Pessoa <marcio@pessoa.eti.br>
+ * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
 

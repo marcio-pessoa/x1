@@ -1,6 +1,6 @@
 /* gcode.ino, x1 Mark I - Useless Machine, G-code parser sketch file
  * 
- * Author: Márcio Pessoa <marcio.pessoa@sciemon.com>
+ * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
 

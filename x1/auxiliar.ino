@@ -1,6 +1,6 @@
 /* auxiliar.ino, x1 Mark I - Useless Machine, Arduino auxiliar sketch file
  * 
- * Author: Márcio Pessoa <marcio@pessoa.eti.br>
+ * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
 

@@ -4,22 +4,22 @@
  * I also tested on: Arduino Uno
  * To work on other Arduino models, some adaptations may be necessary.
  * 
- * Author: Márcio Pessoa <marcio@pessoa.eti.br>
+ * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
 
 #include <Arduino.h>         // Arduino - Main library
 #include <Servo.h>           // Arduino - Servo Motor
 #include <math.h>            // Arduino - Math functions
-#include <Project.h>         // Sciemon - Basic project definitions
-#include <Help.h>            // Sciemon - Help messages builder
-#include <Debounce.h>        // Sciemon - Debounce for switch
-#include <Blinker.h>         // Sciemon - Blink leds nicely
-#include <Alarm.h>           // Sciemon - Manage alarms
-#include <Timer.h>           // Sciemon - Timer library with nice features
-#include <Switch.h>          // Sciemon - Switch manipulation
-#include <Axis.h>            // Sciemon - Motor axis
-#include "config.h"          // Sciemon - Configuration
+#include <Project.h>         // Marcio Pessoa - Basic project definitions
+#include <Help.h>            // Marcio Pessoa - Help messages builder
+#include <Debounce.h>        // Marcio Pessoa - Debounce for switch
+#include <Blinker.h>         // Marcio Pessoa - Blink leds nicely
+#include <Alarm.h>           // Marcio Pessoa - Manage alarms
+#include <Timer.h>           // Marcio Pessoa - Timer library
+#include <Switch.h>          // Marcio Pessoa - Switch manipulation
+#include <Axis.h>            // Marcio Pessoa - Motor axis
+#include "config.h"          // Marcio Pessoa - Configuration
 #include <MemoryFree.h>      // 
 
 // Project definitions
@@ -32,7 +32,7 @@ Project x1("x1",  // Platform
            "Copyright (c) 2015-2018 Marcio Pessoa",  // Owner
            "undefined. There is NO WARRANTY.",  // License
            "http://pessoa.eti.br/",  // Website
-           "Marcio Pessoa <marcio@pessoa.eti.br>");  // Contact
+           "Marcio Pessoa <marcio.pessoa@gmail.com>");  // Contact
 
 // Status LED
 Blinker status_led(led_status_pin);
