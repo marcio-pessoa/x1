@@ -6,10 +6,16 @@
 
 [Kanban](KANBAN.md)
 
+![x1 working](Documents/Pictures/x1.gif)
+
 # Mechanics
 
 ## Case
-- Aluminum PCB Box Instrument Box Enclosure Electronic Project Case 150*105*55mm
+Tecnical specifications:
+- Material: Anodized aluminum
+- Width: 55 mm
+- Height: 105 mm
+- Depth: 150 mm
 
 ## Finger
 ![Mechanical design](Mechanics/x1.svg)
