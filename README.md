@@ -24,7 +24,7 @@ Tecnical specifications:
 
 ## Arduino
 Technical specifications:
-- Model: [Arduino Leonardo] R3
+- Model: [Arduino Leonardo]
 
 ### Pin designation table
  id | pin |   type    | direction |               description
