@@ -4,6 +4,9 @@
 
 ![x1 working](Documents/Pictures/x1.gif)
 
+## Videos
+Watch this projects videos on [YouTube Playlist].
+
 ## Changes
 All notable changes to this project will be documented in this [Change log](CHANGELOG.md).
 
@@ -27,3 +30,4 @@ If you want to build your own, take a look at [Bill of materials](BOM.md).
 This project is always under enhancements. I use [Kanban](KANBAN.md) to control project evolution.
 
 ---
+[YouTube Playlist]: https://www.youtube.com/watch?v=SrWdYAbakd8&list=PLs1JZHyVhlZVaekFsgcMjJ2j-l-kbQEc4
