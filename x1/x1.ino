@@ -31,7 +31,7 @@ Project x1("x1",  // Platform
            "4",  // Serial number
            "Copyright (c) 2015-2018 Marcio Pessoa",  // Owner
            "undefined. There is NO WARRANTY.",  // License
-           "http://pessoa.eti.br/",  // Website
+           "https://github.com/marcio-pessoa/x1",  // Website
            "Marcio Pessoa <marcio.pessoa@gmail.com>");  // Contact
 
 // Status LED
