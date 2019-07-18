@@ -26,8 +26,5 @@ The [Firmware](x1/README.md) is an original creation. ;-)
 ## BOM - Bill of materials
 If you want to build your own, take a look at [Bill of materials](BOM.md).
 
-## Project Kanban
-This project is always under enhancements. I use [Kanban](KANBAN.md) to control project evolution.
-
 ---
 [YouTube Playlist]: https://www.youtube.com/watch?v=SrWdYAbakd8&list=PLs1JZHyVhlZVaekFsgcMjJ2j-l-kbQEc4
