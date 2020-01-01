@@ -1,5 +1,7 @@
 /* config.h, x1 Mark I - Useless Machine, Arduino project config file
- * 
+ *
+ * Copyright 2019-2020 Marcio Pessoa
+ *
  * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
@@ -41,5 +43,5 @@ const unsigned long serial_speed = 115200;
 // Move done
 bool done = true;
 
-// 
+//
 const float FLIMIT = 340282350000000000000000000000000000000;

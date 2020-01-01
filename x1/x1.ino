@@ -1,9 +1,11 @@
 /* x1.ino, x1 Mark I - Useless Machine, Arduino main sketch file
- * 
+ *
+ * Copyright 2019-2020 Marcio Pessoa
+ *
  * This sketch was developed and tested on: Arduino Leonardo
  * I also tested on: Arduino Uno
  * To work on other Arduino models, some adaptations may be necessary.
- * 
+ *
  * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
@@ -19,8 +21,8 @@
 #include <Timer.h>           // Marcio Pessoa - Timer library
 #include <Switch.h>          // Marcio Pessoa - Switch manipulation
 #include <Axis.h>            // Marcio Pessoa - Motor axis
-#include "config.h"          // Marcio Pessoa - Configuration
-#include <MemoryFree.h>      // 
+#include "./config.h"        // Marcio Pessoa - Configuration
+#include <MemoryFree.h>      //
 
 // Project definitions
 Project x1("x1",  // Platform

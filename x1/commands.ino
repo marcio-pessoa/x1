@@ -1,24 +1,26 @@
 /* commands.ino, x1 Mark I - Useless Machine, Arduino commands sketch file
- * 
+ *
+ * Copyright 2019-2020 Marcio Pessoa
+ *
  * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
 int CommandM100(char letter = 0) {
-  if (letter == 'G' or letter == 0) {
+  if (letter == 'G' || letter == 0) {
     echoln(F("G0\tMove axis"));
     echoln(F("G03\tFinger delay"));
     echoln(F("G28\tFinger home"));
@@ -26,7 +28,7 @@ int CommandM100(char letter = 0) {
     echoln(F("G90\tAbsolute programming"));
     echoln(F("G91\tIncremental programming"));
   }
-  if (letter == 'M' or letter == 0) {
+  if (letter == 'M' || letter == 0) {
     echoln(F("M0\tStop"));  }
     echoln(F("M15\tSystem information"));
     echoln(F("M17\tAttach motor"));
@@ -43,16 +45,16 @@ int CommandM100(char letter = 0) {
     echoln(F("M111\tDebug mode"));
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -60,16 +62,16 @@ int CommandG90() {
   finger.absolute(true);
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -77,16 +79,16 @@ int CommandG91() {
   finger.absolute(false);
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -97,16 +99,16 @@ int CommandM86() {
                  "(" + String(finger.delayRead()) + ")");
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -115,16 +117,16 @@ int CommandM17() {
   servo.write(finger.positionRead());
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -140,16 +142,16 @@ int CommandG29() {
   finger.positionWrite(position_switch_off);
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -165,16 +167,16 @@ int CommandG28() {
   finger.positionWrite(position_park);
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   false: OK
  *   true: Power off
@@ -190,16 +192,16 @@ int CommandG0(int x) {
   finger.positionWrite(x);
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -207,16 +209,16 @@ int CommandM0() {
   finger.positionWrite(finger.positionRead());
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -225,16 +227,16 @@ int CommandM111() {
   echoln("Debug mode: " + String(debug ? "Yes" : "No"));
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -242,16 +244,16 @@ int CommandM18() {
   servo.detach();
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -260,16 +262,16 @@ int CommandM80() {
   return false;
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -283,15 +285,15 @@ bool CommandM81() {
 }
 
 /* CommandM82
- * 
+ *
  * Description
  *   Power off.
- * 
+ *
  *   CommandM82()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   bool
  */
@@ -308,16 +310,16 @@ bool CommandM82() {
   return relay.status();
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -326,16 +328,16 @@ int CommandM90() {
   echoln("    Speed: " + String(servo_speed * 100) + " cm/s");
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -347,16 +349,16 @@ int CommandM15() {
   CommandM86();  // Axis information
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   Finger delay.
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -364,16 +366,16 @@ int CommandG3(int x) {
   finger.delayWrite(x);
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -382,13 +384,13 @@ int CommandM89() {
   int free = freeMemory();
   int used = total - free;
   int percent = (float)used * 100 / total;
-  // 
+  //
   Alarm memory(80, 90);
   memory.nameWrite("Memory");
   memory.unitWrite("%");
   memory.check(percent);
-  // 
-  echoln(memory.nameRead() + " (" + memory.status_name() + "): " + 
+  //
+  echoln(memory.nameRead() + " (" + memory.status_name() + "): " +
          percent + memory.unitRead() + " used");
   if (debug) {
     echoln("  SRAM:\t" + String(total) + " B\n" +
@@ -399,16 +401,16 @@ int CommandM89() {
   }
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
@@ -418,22 +420,22 @@ int CommandM99() {
   x1.reset();
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
 int CommandM92() {
   echoln(x1.version());
-  if (debug or (millis() < 1000)) {
+  if (debug || (millis() < 1000)) {
     echoln(x1.owner());
     echoln(x1.compiled());
     echoln(x1.license());
@@ -442,19 +444,19 @@ int CommandM92() {
   }
 }
 
-/* 
- * 
+/*
+ *
  * Description
  *   .
- * 
+ *
  *   ()
- * 
+ *
  * Parameters
  *   none
- * 
+ *
  * Returns
  *   void
  */
 int Command0() {
-  echoln(F("Unknown command")); 
+  echoln(F("Unknown command"));
 }

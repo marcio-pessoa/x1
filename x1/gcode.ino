@@ -1,5 +1,7 @@
 /* gcode.ino, x1 Mark I - Useless Machine, G-code parser sketch file
- * 
+ *
+ * Copyright 2019-2020 Marcio Pessoa
+ *
  * Author: Márcio Pessoa <marcio.pessoa@gmail.com>
  * Contributors: none
  */
@@ -41,8 +43,8 @@ void GcodeCheck() {
 
 float GCodeNumber(char code, float val) {
   char *ptr = buffer;
-  while(ptr && *ptr && ptr < buffer + buffer_pointer) {
-    if(*ptr == code) {
+  while (ptr && *ptr && ptr < buffer + buffer_pointer) {
+    if (*ptr == code) {
       return atof(ptr + 1);
     }
     ptr = strchr(ptr, ' ') + 1;
@@ -86,7 +88,7 @@ void GCodeParse() {
       }
       break;
     case 'M':
-      switch(number) {
+      switch (number) {
         case 0:
           retval = CommandM0();
           break;
@@ -141,7 +143,7 @@ void GCodeParse() {
       }
       break;
   }
-  if (buffer_pointer > 2 and skip_status == false) {
+  if (buffer_pointer > 2 && skip_status == false) {
     status(retval);
   }
 }
