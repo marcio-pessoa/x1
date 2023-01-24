@@ -5,10 +5,13 @@
 ## Electronics
 
 ### Arduino
+
 Technical specifications:
+
 - Model: [Arduino Leonardo]
 
 #### Pin designation table
+
  id | pin |   type    | direction |               description
 ----|-----|-----------|-----------|--------------------------------------------
   0 |   0 | digital   | input     | Serial communication
@@ -32,13 +35,14 @@ Technical specifications:
  18 |   4 | -         | -         | -
  19 |   5 | analog    | input     | Random number generator Seed input
 
-#### Diagram
+#### Diagram (Arduino)
+
                                  +-----+
     +----[PWR]-------------------| USB |--+
     |                            +-----+  |
     |                                     |
-    |                           A5/SCL[ ] |   C5 
-    |                           A4/SDA[ ] |   C4 
+    |                           A5/SCL[ ] |   C5
+    |                           A4/SDA[ ] |   C4
     |                             AREF[ ] |
     |                              GND[ ] |
     | [ ]N/C                    SCK/13[x]~|   B5
@@ -60,19 +64,21 @@ Technical specifications:
     |  Leonardo  GND MOSI 5V  ____________/
      \_______________________/
 
-Adapted from: http://busyducks.com/ascii-art-arduinos
+Adapted from: [http://busyducks.com/ascii-art-arduinos](http://busyducks.com/ascii-art-arduinos)
 
 ### Prototype shield
+
 Technical specifications:
+
 - Version: 5
 
-#### Diagram
+#### Diagram (Shield)
 
     +----[PWR]----------------------------+
     |                                     |
     |         GND/RST2  [ ][ ]            |
-    |       MOSI2/SCK2  [ ][ ]  A5/SCL[ ] |   C5 
-    |          5V/MISO2 [ ][ ]  A4/SDA[ ] |   C4 
+    |       MOSI2/SCK2  [ ][ ]  A5/SCL[ ] |   C5
+    |          5V/MISO2 [ ][ ]  A4/SDA[ ] |   C4
     |                             AREF[ ] |
     |                              GND[ ] |
     | [ ]N/C                    SCK/13[x] |   B5
@@ -94,9 +100,10 @@ Technical specifications:
     |            GND MOSI 5V  ____________/
      \_______________________/
 
-
 ### Battery
+
 Technical specifications:
+
 - Technology: Rechargeable Li-ion
 - Voltage: 3.7V
 - Capacity: 3200 mAh
