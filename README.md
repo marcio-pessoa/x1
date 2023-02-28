@@ -6,7 +6,7 @@
 
 ## Videos
 
-Watch this projects videos on [YouTube Playlist].
+Watch some demo videos on [YouTube].
 
 ## Changes
 
@@ -34,4 +34,4 @@ The [Firmware](x1/README.md) is an original creation. ;-)
 If you want to build your own, take a look at [Bill of materials](BOM.md).
 
 ---
-[YouTube Playlist]: https://www.youtube.com/watch?v=SrWdYAbakd8&list=PLs1JZHyVhlZVaekFsgcMjJ2j-l-kbQEc4
+[YouTube]: https://www.youtube.com/watch?v=SrWdYAbakd8&list=PLs1JZHyVhlZVaekFsgcMjJ2j-l-kbQEc4
