@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this [Change log](CHAN
 
 This project uses an original mech made from scratch with the following goals:
 
-- Well done
+- Well done finish
 - Cheap, but fancy
 
 Check out the original [Mechanics](Mechanics/README.md) design to know more.
