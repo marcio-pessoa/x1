@@ -1,6 +1,6 @@
 /* x1.ino, x1 Mark I - Useless Machine, Arduino main sketch file
  *
- * Copyright 2019-2020 Marcio Pessoa
+ * Copyright 2019-2023 Marcio Pessoa
  *
  * This sketch was developed and tested on: Arduino Leonardo
  * I also tested on: Arduino Uno
@@ -10,30 +10,30 @@
  * Contributors: none
  */
 
-#include <Arduino.h>         // Arduino - Main library
-#include <Servo.h>           // Arduino - Servo Motor
-#include <math.h>            // Arduino - Math functions
-#include <Project.h>         // Marcio Pessoa - Basic project definitions
-#include <Help.h>            // Marcio Pessoa - Help messages builder
-#include <Debounce.h>        // Marcio Pessoa - Debounce for switch
-#include <Blinker.h>         // Marcio Pessoa - Blink leds nicely
-#include <Alarm.h>           // Marcio Pessoa - Manage alarms
-#include <Timer.h>           // Marcio Pessoa - Timer library
-#include <Switch.h>          // Marcio Pessoa - Switch manipulation
-#include <Axis.h>            // Marcio Pessoa - Motor axis
-#include "./config.h"        // Marcio Pessoa - Configuration
-#include <MemoryFree.h>      //
+#include <Alarm.h>       // Marcio Pessoa - Manage alarms
+#include <Arduino.h>     // Arduino - Main library
+#include <Axis.h>        // Marcio Pessoa - Motor axis
+#include <Blinker.h>     // Marcio Pessoa - Blink leds nicely
+#include <Debounce2.h>   // Marcio Pessoa - Debounce for switch
+#include <Help.h>        // Marcio Pessoa - Help messages builder
+#include <MemoryFree.h>  //
+#include <Project.h>     // Marcio Pessoa - Basic project definitions
+#include <Servo.h>       // Arduino - Servo Motor
+#include <Switch.h>      // Marcio Pessoa - Switch manipulation
+#include <Timer.h>       // Marcio Pessoa - Timer library
+#include <math.h>        // Arduino - Math functions
+#include "./config.h"    // Marcio Pessoa - Configuration
 
 // Project definitions
-Project x1("x1",  // Platform
-           "I",  // Mark
-           "Useless Machine",  // Name
-           "0.21b",  // Version
-           "2018-07-27",  // Version date
-           "4",  // Serial number
-           "Copyright (c) 2015-2018 Marcio Pessoa",  // Owner
-           "undefined. There is NO WARRANTY.",  // License
-           "https://github.com/marcio-pessoa/x1",  // Website
+Project x1("x1",                                        // Platform
+           "I",                                         // Mark
+           "Useless Machine",                           // Name
+           "1.30.0",                                    // Version
+           "2023-04-12",                                // Version date
+           "4",                                         // Serial number
+           "Copyright (c) 2015-2023 Marcio Pessoa",     // Owner
+           "undefined. There is NO WARRANTY.",          // License
+           "https://github.com/marcio-pessoa/x1",       // Website
            "Marcio Pessoa <marcio.pessoa@gmail.com>");  // Contact
 
 // Status LED
@@ -45,7 +45,7 @@ Switch relay(relay_pin);
 // Lever switch
 int lever_counter = 0;
 bool lever_last_state = LOW;
-Debounce lever(lever_pin);
+Debounce2 lever;
 
 // Axis
 Axis finger("finger",             // Name
@@ -76,7 +76,7 @@ void setup() {
   pinMode(random_Seed_pin, INPUT);
   randomSeed(analogRead(random_Seed_pin));
   // Lever switch
-  lever.set(70);  // Set debounce to 70 milliseconds
+  lever.attach(lever_pin, 70, 0);  // Set debounce to 70 milliseconds
   // Attach servo motor
   CommandM17();  // Attach motor
   // G-code ready to receive commands
