@@ -76,7 +76,7 @@ void setup() {
   pinMode(random_Seed_pin, INPUT);
   randomSeed(analogRead(random_Seed_pin));
   // Lever switch
-  lever.attach(lever_pin, 70);  // Set debounce to 70 milliseconds
+  lever.attach(lever_pin, 70, 0);  // Set debounce to 70 milliseconds
   // Attach servo motor
   CommandM17();  // Attach motor
   // G-code ready to receive commands
