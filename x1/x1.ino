@@ -10,6 +10,7 @@
  * Contributors: none
  */
 
+// Libraries
 #include <Alarm.h>       // Marcio Pessoa - Manage alarms
 #include <Arduino.h>     // Arduino - Main library
 #include <Axis.h>        // Marcio Pessoa - Motor axis
@@ -43,9 +44,9 @@ Blinker status_led(led_status_pin);
 Switch relay(relay_pin);
 
 // Lever switch
-int lever_counter = 0;
-bool lever_last_state = LOW;
-Debounce2 lever;
+int lever_counter = 0;       // Counts how many times the lever was activated
+bool lever_last_state = LOW; // Last state of the lever
+Debounce2 lever;             // Debounce for the lever switch
 
 // Axis
 Axis finger("finger",             // Name
@@ -66,6 +67,12 @@ Timer action((unsigned long)action_timer, COUNTDOWN);
 // Standby timer
 Timer standby((unsigned long)standby_timer * 1000, COUNTDOWN);
 
+/**
+ * @brief Setup function.
+ * This function is called once when the Arduino starts.
+ * It initializes the serial communication, the random number generator,
+ * the lever switch, the servo motor and the G-code parser.
+ */
 void setup() {
   // Serial interface
   Serial.begin(serial_speed);
@@ -76,13 +83,19 @@ void setup() {
   pinMode(random_Seed_pin, INPUT);
   randomSeed(analogRead(random_Seed_pin));
   // Lever switch
-  lever.attach(lever_pin, 70, 0);  // Set debounce to 70 milliseconds
+  lever.attach(lever_pin, lever_debounce_time, lever_debounce_mode);
   // Attach servo motor
   CommandM17();  // Attach motor
   // G-code ready to receive commands
   GcodeReady();
 }
 
+/**
+ * @brief Main loop.
+ * This function is called repeatedly in a loop.
+ * It calls the handlers for notifications, the lever switch, the finger,
+ * the standby timer and the G-code parser.
+ */
 void loop() {
   NotificationHandler();
   SwitchHandler();

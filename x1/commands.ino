@@ -6,20 +6,14 @@
  * Contributors: none
  */
 
-/*
+/**
+ * @brief Displays a help message with all available G-code and M-code commands.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @param letter [char] 'G' to show only G-codes, 'M' to show only M-codes, or 0
+ * to show all.
+ * @return bool Returns false for success.
  */
-int CommandM100(char letter = 0) {
+bool CommandM100(char letter = 0) {
   if (letter == 'G' || letter == 0) {
     echoln(F("G0\tMove axis"));
     echoln(F("G03\tFinger delay"));
@@ -29,7 +23,7 @@ int CommandM100(char letter = 0) {
     echoln(F("G91\tIncremental programming"));
   }
   if (letter == 'M' || letter == 0) {
-    echoln(F("M0\tStop"));  }
+    echoln(F("M0\tStop"));
     echoln(F("M15\tSystem information"));
     echoln(F("M17\tAttach motor"));
     echoln(F("M18\tDetach motor"));
@@ -43,237 +37,152 @@ int CommandM100(char letter = 0) {
     echoln(F("M99\tReset system"));
     echoln(F("M100\tThis help message"));
     echoln(F("M111\tDebug mode"));
+  }
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Set axis to absolute programming.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandG90() {
+bool CommandG90() {
   finger.absolute(true);
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Set axis to incremental programming.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandG91() {
+bool CommandG91() {
   finger.absolute(false);
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Displays axis information.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM86() {
-  echoln(String("Finger position: ") +
-                 "(" + String(finger.positionRead()) + ")");
-  echoln(String("Finger delay: ") +
-                 "(" + String(finger.delayRead()) + ")");
+bool CommandM86() {
+  echoln(String("Finger position: ") + "(" + String(finger.positionRead()) +
+         ")");
+  echoln(String("Finger delay: ") + "(" + String(finger.delayRead()) + ")");
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Attach servo motor.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM17() {
+bool CommandM17() {
   servo.attach(finger.pinRead());
   servo.write(finger.positionRead());
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Move finger to switch off position.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false on success, true on failure (if relay is off).
  */
-int CommandG29() {
+bool CommandG29() {
   if (!relay.status()) {
     done = true;
     status(true);
-    return true;
+    return true;  // Failure
   }
   done = false;
   standby.reset();
   CommandG90();  // Absolute programming
   finger.positionWrite(position_switch_off);
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Move finger to park position.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false on success, true on failure (if relay is off).
  */
-int CommandG28() {
+bool CommandG28() {
   if (!relay.status()) {
     done = true;
     status(true);
-    return true;
+    return true;  // Failure
   }
   done = false;
   standby.reset();
   CommandG90();  // Absolute programming
   finger.positionWrite(position_park);
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Move finger to a specific position.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   false: OK
- *   true: Power off
+ * @param x [int] The position to move to.
+ * @return bool Returns false on success, true on failure (if relay is off).
  */
-int CommandG0(int x) {
+bool CommandG0(int x) {
   if (!relay.status()) {
     done = true;
     status(true);
-    return true;
+    return true;  // Failure
   }
   standby.reset();
   done = false;
   finger.positionWrite(x);
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Stop finger movement.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM0() {
+bool CommandM0() {
   finger.positionWrite(finger.positionRead());
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Toggle debug mode.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM111() {
+bool CommandM111() {
   debug = !debug;
   echoln("Debug mode: " + String(debug ? "Yes" : "No"));
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Detach servo motor.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM18() {
+bool CommandM18() {
   servo.detach();
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Displays power status.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM80() {
+bool CommandM80() {
   echoln("Power: " + String(relay.status() ? "On" : "Off"));
-  return false;
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Turn power on.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns true on success, false on failure.
  */
 bool CommandM81() {
   relay.on();
@@ -284,18 +193,10 @@ bool CommandM81() {
   return !relay.status();
 }
 
-/* CommandM82
+/**
+ * @brief Turn power off.
  *
- * Description
- *   Power off.
- *
- *   CommandM82()
- *
- * Parameters
- *   none
- *
- * Returns
- *   bool
+ * @return bool Returns true on success, false on failure.
  */
 bool CommandM82() {
   if (finger.positionRead() == position_park) {
@@ -310,130 +211,87 @@ bool CommandM82() {
   return relay.status();
 }
 
-/*
+/**
+ * @brief Displays lever status and finger speed.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM90() {
+bool CommandM90() {
   echoln("Lever: " + String(lever.check() ? "On" : "Off"));
   echoln("    Speed: " + String(servo_speed * 100) + " cm/s");
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Displays system information.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM15() {
+bool CommandM15() {
   CommandM92();  // Version information
   CommandM89();  // Memory information
   CommandM80();  // Power status
   CommandM90();  // Lever status
   CommandM86();  // Axis information
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Set finger delay.
  *
- * Description
- *   Finger delay.
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @param x [int] The delay in milliseconds.
+ * @return bool Returns false for success.
  */
-int CommandG3(int x) {
+bool CommandG3(int x) {
   finger.delayWrite(x);
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Displays memory information.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM89() {
-  int total = 2.5 * 1024;
+bool CommandM89() {
+  int total = SRAM_TOTAL;
   int free = freeMemory();
   int used = total - free;
   int percent = (float)used * 100 / total;
   //
-  Alarm memory(80, 90);
+  Alarm memory(MEMORY_WARNING_LEVEL, MEMORY_CRITICAL_LEVEL);
   memory.nameWrite("Memory");
   memory.unitWrite("%");
   memory.check(percent);
   //
-  echoln(memory.nameRead() + " (" + memory.status_name() + "): " +
-         percent + memory.unitRead() + " used");
+  echoln(memory.nameRead() + " (" + memory.status_name() + "): " + percent +
+         memory.unitRead() + " used");
   if (debug) {
-    echoln("  SRAM:\t" + String(total) + " B\n" +
-           "  Used:\t" + used + " B\n" +
-           "  Free:\t" + free + " B\n" +
-           "  Warning: " + memory.max_warningRead() + memory.unitRead() + "\n" +
+    echoln("  SRAM:\t" + String(total) + " B\n" + "  Used:\t" + used +
+           " B\n" + "  Free:\t" + free + " B\n" + "  Warning: " +
+           memory.max_warningRead() + memory.unitRead() + "\n" +
            "  Critical: " + memory.max_criticalRead() + memory.unitRead());
   }
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Reset system.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM99() {
+bool CommandM99() {
   echoln(F("Reseting...\n"));
   CommandM18();  // Detach motor
   x1.reset();
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Displays system version.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int CommandM92() {
+bool CommandM92() {
   echoln(x1.version());
   if (debug || (millis() < 1000)) {
     echoln(x1.owner());
@@ -442,21 +300,15 @@ int CommandM92() {
     echoln(x1.website());
     echoln(x1.contact());
   }
+  return false;  // Success
 }
 
-/*
+/**
+ * @brief Displays an "Unknown command" message.
  *
- * Description
- *   .
- *
- *   ()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
+ * @return bool Returns false for success.
  */
-int Command0() {
+bool Command0() {
   echoln(F("Unknown command"));
+  return false;  // Success
 }

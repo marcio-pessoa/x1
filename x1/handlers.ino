@@ -6,10 +6,18 @@
  * Contributors: none
  */
 
+/**
+ * @brief Handles notifications, like blinking the status LED.
+ */
 void NotificationHandler() {
   status_led.blink();
 }
 
+/**
+ * @brief Handles the lever switch.
+ * This function checks the state of the lever switch and calls the
+ * appropriate function to turn the switch off or park the finger.
+ */
 void SwitchHandler() {
   bool lever_state = lever.check();
   if (lever_state != lever_last_state) {
@@ -22,6 +30,10 @@ void SwitchHandler() {
   }
 }
 
+/**
+ * @brief Handles the finger movement.
+ * This function moves the finger and updates its position.
+ */
 void FingerHandler() {
   if (action.check()) {
     finger.run();
@@ -35,6 +47,11 @@ void FingerHandler() {
   }
 }
 
+/**
+ * @brief Handles the standby timer.
+ * This function checks the standby timer and turns the power off if the
+ * machine is idle.
+ */
 void StandbyHandler() {
   if (standby.check() &&
       relay.status() &&

@@ -6,8 +6,14 @@
  * Contributors: none
  */
 
+/**
+ * @brief Turn the switch off.
+ * This function is called when the lever is activated. It plays a sound,
+ * turns on the angry LED, and moves the finger to turn the switch off.
+ * The speed of the finger increases with each activation.
+ */
 void TurnSwitchOff() {
-  tone(speaker_pin, 2217, 60);
+  tone(speaker_pin, TONE_SWITCH_OFF_FREQ, TONE_SWITCH_OFF_DUR);
   digitalWrite(led_angry_pin, HIGH);
   lever_counter++;
   // Set delay before finger action and reset timer
@@ -28,8 +34,13 @@ void TurnSwitchOff() {
   }
 }
 
+/**
+ * @brief Park the finger.
+ * This function is called when the lever is deactivated. It plays a sound,
+ * turns off the angry LED, and moves the finger to the park position.
+ */
 void ParkFinger() {
-  tone(speaker_pin, 1217, 80);
+  tone(speaker_pin, TONE_PARK_FINGER_FREQ, TONE_PARK_FINGER_DUR);
   digitalWrite(led_angry_pin, LOW);
   CommandG28();  // Finger home
   // CommandG3(ceil(random(servo_delay) + servo_offset_delay));  // Finger delay

@@ -6,27 +6,49 @@
  * Contributors: none
  */
 
-#define BUFFER_SIZE 48
+#define BUFFER_SIZE 48  // G-code buffer size
 
-char buffer[BUFFER_SIZE];
-int buffer_pointer = 0;
+char buffer[BUFFER_SIZE];    // G-code buffer
+int buffer_pointer = 0;      // G-code buffer pointer
 
+/**
+ * @brief Print status to serial port.
+ * @param i [bool] Status to print (false = ok, true = nok).
+ */
 void status(bool i) {
   Serial.println(i == false ? F("ok") : F("nok"));
 }
 
+/**
+ * @brief Print message to serial port.
+ * @param message [String] Message to print.
+ * @return bool Returns true.
+ */
 bool echo(String message) {
   Serial.print(message);
+  return true;
 }
 
+/**
+ * @brief Print message to serial port with newline.
+ * @param message [String] Message to print.
+ * @return bool Returns true.
+ */
 bool echoln(String message) {
   echo(message + "\n");
+  return true;
 }
 
+/**
+ * @brief Reset G-code buffer.
+ */
 void GcodeReady() {
   buffer_pointer = 0;
 }
 
+/**
+ * @brief Check for new G-code commands from serial port.
+ */
 void GcodeCheck() {
   while (Serial.available() > 0) {
     char c = Serial.read();
@@ -41,6 +63,12 @@ void GcodeCheck() {
   }
 }
 
+/**
+ * @brief Get number from G-code command.
+ * @param code [char] Code to search for.
+ * @param val [float] Default value to return if code is not found.
+ * @return float Returns the number found or the default value.
+ */
 float GCodeNumber(char code, float val) {
   char *ptr = buffer;
   while (ptr && *ptr && ptr < buffer + buffer_pointer) {
@@ -52,6 +80,9 @@ float GCodeNumber(char code, float val) {
   return val;
 }
 
+/**
+ * @brief Parse and execute G-code command.
+ */
 void GCodeParse() {
   bool retval = false;
   bool skip_status = false;

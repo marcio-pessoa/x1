@@ -15,6 +15,8 @@ const byte speaker_pin = 5;
 
 // Lever
 const byte lever_pin = 2;
+const int lever_debounce_time = 70; // milliseconds
+const int lever_debounce_mode = 0; // 0 = normal, 1 = inverted
 
 // Power relay
 const byte relay_pin = 3;
@@ -42,6 +44,17 @@ const unsigned long serial_speed = 115200;
 
 // Move done
 bool done = true;
+
+// Sounds
+const int TONE_SWITCH_OFF_FREQ = 2217;
+const int TONE_SWITCH_OFF_DUR = 60;
+const int TONE_PARK_FINGER_FREQ = 1217;
+const int TONE_PARK_FINGER_DUR = 80;
+
+// Memory
+const float SRAM_TOTAL = 2.5 * 1024;
+const int MEMORY_WARNING_LEVEL = 80;    // percent
+const int MEMORY_CRITICAL_LEVEL = 90;  // percent
 
 //
 const float FLIMIT = 340282350000000000000000000000000000000;
